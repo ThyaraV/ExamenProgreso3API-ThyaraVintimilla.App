@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ExamenProgreso3API_ThyaraVintimilla.TV_ViewModels"
+             x:Class="ExamenProgreso3API_ThyaraVintimilla.TV_Views.TV_CreationPage"
+             Title="TV_CreationPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+            Spacing="10"
+            VerticalOptions="StartAndExpand">
+            <Label Text="Palabra" />
+            <Entry x:Name="nameB" Text="{Binding word}" />
+            <Label Text="Descripción" />
+            <Entry x:Name="descB" Text="{Binding Description}" />
+            <Label Text="Fecha Actual"/>
+            <Label x:Name="fuente"
+                   Text="{Binding DateTime, StringFormat='{0:dd/MM/yyy HH:mm:ss}'}">
+                <Label.BindingContext>
+                    <local:TV_DateViewModel/>
+                </Label.BindingContext>
+            </Label>
+
+            <Button Text="Guardar"
+                           Clicked="SavedClicked"  />
+            <Button Text="Borrar"
+                           Clicked="SavedClicked"   />
+            <Button Text="Cancelar"
+                            Clicked="SavedClicked"  />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

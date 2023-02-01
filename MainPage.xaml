@@ -29,8 +29,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        
-
+        <Button Text="Actualizar" Clicked="Actualizar_Clicked" />
+        <Button Text="Delete" Clicked="Delete_Clicked" />
 
     </StackLayout>
 

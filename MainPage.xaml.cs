@@ -3,7 +3,7 @@ using System.Net;
 using SQLite;
 using Newtonsoft.Json;
 using ExamenProgreso3API_ThyaraVintimilla.TV_Data;
-
+using ExamenProgreso3API_ThyaraVintimilla.TV_Views;
 
 namespace ExamenProgreso3API_ThyaraVintimilla;
 
@@ -38,17 +38,26 @@ public partial class MainPage : ContentPage
 
     }
 
-    private void TV_CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+   
+
+    private void Delete_Clicked(object sender, EventArgs e)
     {
-        TV_Root burgerTV = e.CurrentSelection.FirstOrDefault() as TV_Root;
-        if (burgerTV == null)
-            return;
-        Shell.Current.GoToAsync(nameof(MainPage), true, new Dictionary<string, object>
-        {
-            {"Item",burgerTV }
-        });
-        ((CollectionView)sender).SelectedItem = null;
+
     }
+
+ 
+
+   
+
+    private void Actualizar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new TV_CreationPage());
+
+    }
+
+
+
 
 
 

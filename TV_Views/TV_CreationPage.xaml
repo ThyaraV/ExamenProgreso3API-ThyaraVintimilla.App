@@ -18,7 +18,7 @@
                     <local:TV_DateViewModel/>
                 </Label.BindingContext>
             </Label>
-
+            
             <Button Text="Guardar"
                            Clicked="SavedClicked"  />
             <Button Text="Borrar"

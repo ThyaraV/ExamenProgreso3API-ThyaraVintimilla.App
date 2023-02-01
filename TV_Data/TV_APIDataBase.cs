@@ -23,21 +23,33 @@ namespace ExamenProgreso3API_ThyaraVintimilla.TV_Data
             conn = new SQLiteConnection(_dbPath);
             conn.CreateTable<TV_Root>();
         }
-        public int AddNewBurger(TV_Root root)
+        public TV_Root GetRoot(string word)
+        {
+            Init();
+            TV_Root root = conn.Table<TV_Root>().Where(r => r.word == word).FirstOrDefault();
+            return root;
+        }
+        public string UpdateRoot(TV_Root root)
+        {
+            Init();
+            conn.Update(root);
+            return root.word;
+        }
+        /*public string AddNewBurger(TV_Root root)
         {
             Init();
             //int result = conn.Insert(burger);
             //return result;
-            if (root.Id != 0)
+            if (root.word != null)
             {
                 conn.Update(root);
-                return root.Id;
+                return root.word;
             }
             else
             {
                 return conn.Insert(root);
             }
-        }
+        }*/
         public List<TV_Root> GetAllBurgers()
         {
             Init();

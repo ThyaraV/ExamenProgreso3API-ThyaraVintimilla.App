@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExamenProgreso3API_ThyaraVintimilla.MainPage">
+             x:Class="ExamenProgreso3API_ThyaraVintimilla.MainPage"
+             xmlns:models="clr-namespace:ExamenProgreso3API_ThyaraVintimilla.TV_Models">
 
     <StackLayout>
 
         <Label Text="Diccionario de palabras" FontSize="Title" Padding="30,10,30,10"/>
         <SearchBar x:Name="Buscador" 
                    Placeholder="Ingrese la palabra" 
-                   TextColor="Black"/>
+                   TextColor="White"/>
 
         <Button Text="Llamar API" Clicked="Button_Clicked" />
+
 
         <ListView x:Name="ListaDemo">
             <ListView.ItemTemplate>
@@ -26,6 +28,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Button Text="Actualizar" Clicked="Actualizar_Clicked" />
+        <Button Text="Delete" Clicked="Delete_Clicked" />
+
     </StackLayout>
 
 </ContentPage>
